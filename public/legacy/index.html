@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Dental Business | Metro Manila's Most Trusted Smile Experts</title>
+    <meta name="description" content="Experience world-class dentistry at Your Dental Business in Metro Manila. Lead by Dr. Ivan Mark Escudero, offering implants, cosmetic care, and oral surgery.">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Your Dental Business | Metro Manila's Top Clinic">
+    <meta property="og:description" content="World-class dentistry in the heart of Metro Manila. 5,000+ happy patients and 4.9★ rating.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://facebook.com/ivanmark.escudero.75">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0B1D30;
+            --navy-mid: #132840;
+            --ivory: #F9F6F1;
+            --ivory-2: #F0EBE2;
+            --gold: #BF9B5A;
+            --gold-light: #D4B578;
+            --mint: #2ABEAA;
+            --mint-light: #E6FAF8;
+            --text: #1A2E42;
+            --text-muted: #6B7E8F;
+            --red: #D94F4F;
+            --radius: 12px;
+            --radius-lg: 24px;
+            --shadow: 0 4px 32px rgba(11,29,48,0.12);
+            --shadow-lg: 0 16px 64px rgba(11,29,48,0.18);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--ivory); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--ivory-2); }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+        a { text-decoration: none; transition: 0.3s; color: inherit; }
+        ul { list-style: none; }
+        section { padding: 100px 0; position: relative; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+        .tag { font-family: 'Space Mono', monospace; text-transform: uppercase; font-size: 12px; color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .tag::before { content: ""; width: 28px; height: 1px; background: var(--gold); }
+
+        /* Buttons */
+        .btn { 
+            display: inline-flex; align-items: center; justify-content: center; 
+            padding: 14px 28px; border-radius: 50px; font-weight: 600; font-size: 15px; 
+            cursor: pointer; position: relative; overflow: hidden; transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            min-height: 44px; border: none;
+        }
+        .btn::after { 
+            content: ""; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; 
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        .btn:hover::after { left: 100%; }
+        .btn:hover { transform: translateY(-2px); }
+
+        .btn-primary { background: var(--gold); color: var(--navy); }
+        .btn-primary:hover { box-shadow: 0 0 20px rgba(191, 155, 90, 0.4); }
+        .btn-outline { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: white; }
+        .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+        .btn-dark { background: var(--navy); color: white; }
+        .btn-dark:hover { box-shadow: 0 8px 24px rgba(11, 29, 48, 0.25); }
+        .btn-small { padding: 8px 20px; font-size: 13px; }
+
+        /* Navigation */
+        nav { 
+            position: fixed; top: 0; width: 100%; height: 72px; z-index: 1000; 
+            display: flex; align-items: center; justify-content: space-between; 
+            padding: 0 48px; transition: 0.4s;
+        }
+        nav.scrolled { background: rgba(11, 29, 48, 0.97); backdrop-filter: blur(16px); box-shadow: var(--shadow); }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { width: 40px; height: 40px; background: var(--gold); border-radius: 10px; display: grid; place-items: center; font-size: 20px; }
+        .logo-text { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: white; }
+        .logo-text span { color: var(--gold-light); }
+        
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.8); }
+        .nav-links a:hover { color: var(--gold-light); }
+        
+        .nav-actions { display: flex; align-items: center; gap: 16px; }
+
+        .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 6px; }
+        .hamburger span { width: 24px; height: 2px; background: white; transition: 0.3s; }
+
+        /* Mobile Menu Drawer */
+        .mobile-drawer { 
+            position: fixed; top: -100%; left: 0; width: 100%; background: var(--navy); 
+            padding: 100px 32px 40px; transition: 0.5s; z-index: 999; display: flex; flex-direction: column; gap: 24px;
+        }
+        .mobile-drawer.active { top: 0; }
+        .mobile-drawer a { font-size: 24px; font-family: 'Cormorant Garamond', serif; color: white; }
+
+        /* Floating Button */
+        .floating-book { 
+            position: fixed; bottom: 32px; left: 32px; z-index: 998; 
+            background: var(--gold); color: var(--navy); padding: 14px 24px; 
+            border-radius: 50px; font-weight: 700; box-shadow: var(--shadow-lg);
+            animation: bounce 3s infinite ease-in-out;
+        }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+        /* Hero Section - FIXED OVERLAP HERE */
+        .hero { 
+            min-height: 100vh; /* Changed from height to min-height for content safety */
+            background: var(--navy); 
+            display: flex; 
+            align-items: center; 
+            overflow: hidden; 
+            padding-top: 180px; /* Increased to 180px to push content well below header */
+            padding-bottom: 80px;
+        }
+        .hero-bg-layer { position: absolute; inset: 0; pointer-events: none; }
+        .glow-mint { background: radial-gradient(circle at 70% 50%, rgba(42, 190, 170, 0.15) 0%, transparent 50%); }
+        .glow-gold { background: radial-gradient(circle at 10% 80%, rgba(191, 155, 90, 0.1) 0%, transparent 50%); }
+        .grid-overlay { background-size: 60px 60px; background-image: linear-gradient(to right, rgba(191, 155, 90, 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(191, 155, 90, 0.06) 1px, transparent 1px); }
+        .floating-tooth { position: absolute; right: -100px; top: 10%; width: 680px; opacity: 0.06; animation: rotate 8s infinite alternate ease-in-out; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(4deg); } }
+
+        .hero-content { 
+            position: relative; 
+            z-index: 2; 
+            width: 55%; 
+            transform: translateY(30px); 
+            opacity: 0; 
+            animation: fadeInUp 0.8s forwards 0.2s; 
+        }
+        .hero-content h1 { 
+            font-size: clamp(48px, 5.5vw, 82px); /* Slightly reduced max size for better fit */
+            color: white; 
+            line-height: 1.1; 
+            margin-bottom: 24px; 
+            letter-spacing: -0.02em;
+        }
+        .hero-content h1 i { color: var(--gold); font-style: italic; }
+        .hero-content p { font-size: 18px; color: rgba(255,255,255,0.65); max-width: 520px; margin-bottom: 40px; }
+        
+        /* Stats Row */
+        .hero-stats { margin-top: 64px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; opacity: 0; animation: fadeInUp 0.8s forwards 0.6s; }
+        .stat-item h3 { font-size: 40px; color: var(--gold-light); line-height: 1; margin-bottom: 4px; }
+        .stat-item p { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.4); margin-bottom: 0; }
+
+        /* Quick Book Card */
+        .hero-card { 
+            position: absolute; right: 48px; top: 58%; transform: translateY(-50%) translateX(40px); 
+            background: rgba(255,255,255,0.06); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.12);
+            padding: 40px; border-radius: var(--radius-lg); width: 380px; z-index: 3; opacity: 0; animation: fadeInRight 0.8s forwards 0.5s;
+        }
+        .hero-card h4 { color: white; font-size: 28px; margin-bottom: 8px; font-family: 'Cormorant Garamond', serif; }
+        .hero-card p { color: rgba(255,255,255,0.5); font-size: 14px; margin-bottom: 24px; }
+        .mini-form { display: flex; flex-direction: column; gap: 16px; }
+        .mini-form input, .mini-form select { 
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); 
+            padding: 14px; border-radius: 8px; color: white; font-family: inherit; font-size: 14px; outline: none;
+        }
+        .mini-form input:focus { border-color: var(--gold); }
+        .hero-card .trust-stars { margin-top: 24px; color: var(--gold); text-align: center; font-size: 12px; opacity: 0.8; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInRight { from { opacity: 0; transform: translateY(-50%) translateX(40px); } to { opacity: 1; transform: translateY(-50%) translateX(0); } }
+
+        /* Sections and Trust Bar */
+        .trust-bar { background: var(--navy-mid); padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .trust-flex { display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; }
+        .trust-item { color: rgba(255,255,255,0.55); font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 10px; }
+
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; margin-top: 64px; }
+        .service-card { background: white; padding: 40px 32px; border-radius: var(--radius-lg); border: 1px solid var(--ivory-2); transition: 0.4s; position: relative; overflow: hidden; }
+        .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+        .service-icon { width: 56px; height: 56px; background: var(--ivory-2); border-radius: 14px; display: grid; place-items: center; font-size: 24px; margin-bottom: 24px; transition: 0.3s; }
+        .service-card:hover .service-icon { background: var(--mint-light); }
+        .service-card h3 { font-size: 24px; color: var(--navy); margin-bottom: 12px; }
+        .service-card p { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+        .service-card a { color: var(--gold); font-weight: 600; font-size: 14px; }
+        .accent-bar { position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: var(--gold); transform: scaleX(0); transition: 0.4s; transform-origin: left; }
+        .service-card:hover .accent-bar { transform: scaleX(1); }
+
+        .why-us { background: var(--navy); color: white; overflow: hidden; }
+        .why-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: center; }
+        .feature-list { display: flex; flex-direction: column; gap: 32px; margin: 40px 0; }
+        .feature-item { display: flex; gap: 20px; }
+        .feature-icon { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: rgba(42, 190, 170, 0.15); border: 1px solid var(--mint); color: var(--mint); display: grid; place-items: center; font-size: 14px; }
+        .feature-item h5 { font-size: 18px; margin-bottom: 4px; }
+        .feature-item p { font-size: 14px; color: rgba(255,255,255,0.6); }
+
+        .booking-section { background: var(--ivory-2); }
+        .booking-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; }
+        .booking-form-card { background: white; padding: 48px; border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-muted); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 15px 16px; border: 1px solid #e4e0d8; border-radius: 12px; font-family: inherit; font-size: 15px; color: var(--navy); background: #fffdfa; transition: border-color .2s, box-shadow .2s, background .2s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(190, 145, 75, .13); background: white; }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: #9a9da3; }
+        .booking-section { position: relative; overflow: hidden; padding: 110px 0; background: linear-gradient(135deg, #f6f2eb 0%, #fffdfa 55%, #f0e9dd 100%); }
+        .booking-section::before { content: ''; position: absolute; width: 420px; height: 420px; border: 1px solid rgba(190,145,75,.18); border-radius: 50%; right: -150px; top: -170px; pointer-events: none; }
+        .booking-section::after { content: ''; position: absolute; width: 260px; height: 260px; border: 1px solid rgba(190,145,75,.16); border-radius: 50%; left: -100px; bottom: -120px; pointer-events: none; }
+        .booking-section .container { position: relative; z-index: 1; }
+        .booking-grid { grid-template-columns: .85fr 1.15fr; gap: clamp(32px, 5vw, 76px); align-items: start; }
+        .booking-copy { padding: 20px 0; }
+        .booking-copy h2 { font-size: clamp(36px, 4vw, 54px); line-height: 1.08; max-width: 520px; }
+        .booking-copy .booking-intro { color: var(--text-muted); margin: 24px 0 32px; max-width: 470px; line-height: 1.8; }
+        .booking-perks { display: grid; gap: 15px; margin: 0 0 36px; }
+        .booking-perks .perk-item { display: flex; align-items: center; gap: 12px; color: var(--navy); font-size: 15px; }
+        .booking-perks .perk-item span { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: #e6eee8; font-size: 12px; flex-shrink: 0; }
+        .booking-phone-card { display: inline-flex; align-items: center; gap: 14px; padding: 16px 20px; border: 1px solid #e7dfd2; border-radius: 16px; background: rgba(255,255,255,.65); }
+        .booking-phone-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: var(--navy); color: white; font-size: 18px; }
+        .booking-phone-card small { display: block; color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+        .booking-phone-card a { font-family: 'Cormorant Garamond', serif; font-size: 23px; color: var(--navy); }
+        .booking-form-card { background: rgba(255,255,255,.96); padding: clamp(24px, 4vw, 44px); border-radius: 24px; border: 1px solid rgba(190,145,75,.22); box-shadow: 0 24px 70px rgba(11,29,48,.10); }
+        .booking-form-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding-bottom: 24px; margin-bottom: 28px; border-bottom: 1px solid #eee8df; }
+        .booking-form-head h3 { font-size: 30px; margin-bottom: 6px; }
+        .booking-form-head p { color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+        .booking-step { flex-shrink: 0; padding: 8px 11px; border-radius: 999px; color: #86612b; background: #f6eddd; font: 11px 'Space Mono', monospace; text-transform: uppercase; letter-spacing: .5px; }
+        .booking-form-card .form-group label { color: #344354; font-size: 12px; letter-spacing: .3px; }
+        .booking-form-card .form-group label span { color: #b67c34; }
+        .booking-form-card .form-row { gap: 16px; }
+        .booking-form-card .btn { border-radius: 12px; padding: 17px 22px; font-weight: 600; box-shadow: 0 8px 20px rgba(11,29,48,.14); }
+        .booking-privacy { display: flex; justify-content: center; align-items: center; gap: 8px; color: #7b8087; font-size: 12px; line-height: 1.5; text-align: center; margin-top: 16px; }
+
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 32px; margin-top: 64px; }
+        .team-card { background: white; padding: 40px; border-radius: 20px; border: 1px solid var(--ivory-2); text-align: center; transition: 0.4s; }
+        .team-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+
+        .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 64px; }
+        .testi-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px); }
+
+        footer { background: var(--navy); color: white; padding-top: 80px; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 64px; padding-bottom: 64px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 32px 0; display: flex; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,0.4); }
+
+        /* Modals and Toast */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(11, 29, 48, 0.85); backdrop-filter: blur(8px); z-index: 2000; display: none; place-items: center; padding: 20px; }
+        .modal-overlay.active { display: grid; }
+        .toast { position: fixed; bottom: 32px; right: 32px; background: var(--navy); color: white; padding: 16px 24px; border-radius: var(--radius); z-index: 2100; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 12px; transform: translateX(120%); transition: 0.4s; border-left: 4px solid var(--mint); }
+        .toast.active { transform: translateX(0); }
+
+        /* Mobile Breakpoints */
+        @media (max-width: 1024px) {
+            .hero-card { display: none; }
+            .hero-content { width: 100%; }
+            .why-grid, .booking-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+        }
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .nav-links, .nav-actions .btn-outline { display: none; }
+            .hamburger { display: flex; }
+            .hero { padding-top: 140px; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .testi-grid, .team-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+
+        .reveal { opacity: 0; transform: translateY(24px); transition: 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    
+/* Responsive refinement: phone and small-tablet layouts */
+html { width:100%; max-width:100%; overflow-x:clip; }
+body { width:100%; max-width:100%; overflow-x:clip; }
+img, svg, video, iframe { max-width:100%; }
+.container { width:100%; }
+@media (max-width: 768px) {
+  .container { padding-left:20px; padding-right:20px; }
+  section { padding:68px 0; }
+  nav { padding:0 18px; }
+  .logo { gap:8px; }
+  .logo-text { font-size:20px; }
+  .hero { min-height:0; padding:124px 0 58px; align-items:flex-start; }
+  .hero-content { width:100%; max-width:100%; transform:none; }
+  .hero-content h1 { font-size:clamp(39px, 10vw, 58px); line-height:1.04; overflow-wrap:anywhere; }
+  .hero-content p { max-width:100%; font-size:15px; }
+  .hero-stats { gap:18px 12px; margin-top:34px; }
+  .hero-stats > * { min-width:0; }
+  .hero-stats h3 { font-size:clamp(23px,6vw,32px); }
+  .hero-bg-layer, .floating-tooth { max-width:100%; }
+  .why-grid, .booking-grid { grid-template-columns:minmax(0,1fr); gap:34px; }
+  .service-grid, .team-grid, .testi-grid { grid-template-columns:minmax(0,1fr); gap:18px; margin-top:34px; }
+  .service-card, .team-card, .testi-card { padding:26px 22px; min-width:0; }
+  .booking-section { padding:68px 0; }
+  .booking-form-card { padding:24px 18px; min-width:0; }
+  .booking-form-head { flex-direction:column; gap:10px; }
+  .booking-form-head h3 { font-size:26px; }
+  .booking-form-card .form-row, .form-row { grid-template-columns:minmax(0,1fr); gap:0; }
+  .form-group, .form-group input, .form-group select, .form-group textarea { min-width:0; }
+  .booking-phone-card { max-width:100%; padding:13px 14px; }
+  .booking-phone-card a { font-size:20px; overflow-wrap:anywhere; }
+  .footer-grid { grid-template-columns:minmax(0,1fr); gap:28px; }
+  .footer-bottom { flex-direction:column; gap:12px; padding:22px 0; }
+  .floating-book { left:50%; bottom:14px; transform:translateX(-50%); padding:12px 20px; white-space:nowrap; max-width:calc(100vw - 32px); }
+  .toast { left:16px; right:16px; bottom:78px; width:auto; justify-content:center; }
+  .mobile-drawer { padding-left:24px; padding-right:24px; }
+}
+@media (max-width: 380px) {
+  .container { padding-left:16px; padding-right:16px; }
+  .hero-content h1 { font-size:37px; }
+  .btn { padding:12px 18px; font-size:14px; }
+  .floating-book { font-size:13px; }
+}
+
+</style>
+</head>
+<body>
+
+    <a href="#book" class="floating-book">📅 Book Appointment</a>
+
+    <nav id="navbar">
+        <div class="logo">
+            <div class="logo-icon">🦷</div>
+            <div class="logo-text">YOUR <span>DENTAL</span></div>
+        </div>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#team">Our Team</a>
+            <a href="#book">Contact</a>
+        </div>
+        <div class="nav-actions">
+            <a href="tel:09626292510" class="btn btn-outline btn-small">📞 Call Us</a>
+            <a href="#book" class="btn btn-primary btn-small">Book Now</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-drawer" id="mobileDrawer">
+        <a href="#services" onclick="toggleMenu()">Services</a>
+        <a href="#testimonials" onclick="toggleMenu()">Reviews</a>
+        <a href="#book" onclick="toggleMenu()">Book Appointment</a>
+        <a href="tel:09626292510" class="btn btn-primary">Call Now</a>
+    </div>
+
+    <header class="hero">
+        <div class="hero-bg-layer glow-mint"></div>
+        <div class="hero-bg-layer glow-gold"></div>
+        <div class="hero-bg-layer grid-overlay"></div>
+        <img src="https://www.svgrepo.com/show/407572/tooth.svg" class="floating-tooth" alt="">
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Smile Deserves <br>the <i>Best</i></h1>
+                <p>Experience world-class dentistry in the heart of Metro Manila. From routine hygiene to advanced oral surgery, your comfort is our priority.</p>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <a href="#book" class="btn btn-primary" style="padding: 18px 36px; font-size: 18px;">📅 Book Your Appointment</a>
+                    <a href="#services" class="btn btn-outline" style="padding: 18px 36px; font-size: 18px;">Explore Services</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>2026+</h3>
+                        <p>Years in Practice</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>5,000+</h3>
+                        <p>Patients</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>4.9★</h3>
+                        <p>Google Rating</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>2</h3>
+                        <p>Locations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <h4>Quick Book</h4>
+            <p>Ready to transform your smile? Reserve your slot in 30 seconds.</p>
+            <form class="mini-form" onsubmit="event.preventDefault(); window.location.hash = 'book';">
+                <select required>
+                    <option value="" disabled selected>Select Service</option>
+                    <option>General Dentistry</option>
+                    <option>Cosmetic Dentistry</option>
+                    <option>Dental Implants</option>
+                    <option>Sedation Dentistry</option>
+                </select>
+                <select required>
+                    <option value="" disabled selected>Choose Branch</option>
+                    <option>Makati Central</option>
+                    <option>Quezon City North</option>
+                </select>
+                <input type="text" placeholder="Preferred date (e.g. June 15)" required>
+                <button class="btn btn-primary" style="width: 100%;">Reserve Slot →</button>
+            </form>
+            <div class="trust-stars">
+                ★★★★★ <br>
+                Trusted by 5,000+ patients in Metro Manila
+            </div>
+        </div>
+    </header>
+
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-flex">
+                <div class="trust-item">🏆 Top-Rated in Metro Manila</div>
+                <div class="trust-item">🦷 Advanced Laser Technology</div>
+                <div class="trust-item">💉 Painless Sedation Available</div>
+                <div class="trust-item">👶 Family & Pediatric Care</div>
+                <div class="trust-item">📅 Mon–Sat by Appointment</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="container">
+            <div class="reveal">
+                <div class="tag">Comprehensive Care</div>
+                <h2>Expert Dental Solutions</h2>
+                <p style="color: var(--text-muted); max-width: 600px;">Tailored treatments designed for lasting health and aesthetics, delivered with precision and care.</p>
+            </div>
+
+            <div class="service-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">🦷</div>
+                    <h3>General Dentistry</h3>
+                    <p>Routine cleanings, exams, fillings, and preventive care to keep your smile healthy and bright.</p>
+                    <a href="services/general-dentistry/index.html">View Service →</a>
+                    <div class="accent-bar"></div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">✨</div>
+                    <h3>Cosmetic Dentistry</h3>
+                    <p>Transform your look with veneers, professional whitening, and full smile makeovers.</p>
+                    <a href="services/cosmetic-dentistry/index.html">View Service →</a>
+                    <div class="accent-bar"></div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">🔩</div>
+                    <h3>Dental Implants</h3>
+                    <p>Permanent, natural-looking replacements for missing teeth using the latest titanium technology.</p>
+                    <a href="services/dental-implants/index.html">View Service →</a>
+                    <div class="accent-bar"></div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">😴</div>
+                    <h3>Sedation Dentistry</h3>
+                    <p>Anxiety-free care with safe, comfortable sedation options for a completely relaxed experience.</p>
+                    <a href="services/sedation-dentistry/index.html">View Service →</a>
+                    <div class="accent-bar"></div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">👶</div>
+                    <h3>Pedodontics</h3>
+                    <p>Gentle, fun, and kid-friendly dental care from specialists who love working with children.</p>
+                    <a href="services/pedodontics/index.html">View Service →</a>
+                    <div class="accent-bar"></div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">🔬</div>
+                    <h3>Laser Dentistry</h3>
+                    <p>Precise, faster-healing laser treatments for gums and soft tissues with minimal discomfort.</p>
+                    <a href="services/laser-dentistry/index.html">View Service →</a>
+                    <div class="accent-bar"></div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">🦴</div>
+                    <h3>Periodontics</h3>
+                    <p>Expert gum disease care and long-term periodontal management to save your foundation.</p>
+                    <a href="services/periodontics/index.html">View Service →</a>
+                    <div class="accent-bar"></div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">😬</div>
+                    <h3>TMJD Treatment</h3>
+                    <p>Specialized diagnosis and relief for jaw pain, clicking, and tension-related headaches.</p>
+                    <a href="services/tmjd-treatment/index.html">View Service →</a>
+                    <div class="accent-bar"></div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">🩹</div>
+                    <h3>Endodontics</h3>
+                    <p>Painless root canal therapy designed to save your natural teeth and eliminate infection.</p>
+                    <a href="services/endodontics/index.html">View Service →</a>
+                    <div class="accent-bar"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why-us">
+        <div class="container">
+            <div class="why-grid">
+                <div class="reveal">
+                    <div class="tag" style="color: var(--mint);">The Clinic Advantage</div>
+                    <h2 style="color: white;">Why Choose <i>Your Dental Business?</i></h2>
+                    <p style="color: rgba(255,255,255,0.6);">We combine artistic precision with medical excellence to provide an unmatched patient experience in Metro Manila.</p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h5>State-of-the-Art Equipment</h5>
+                                <p>Digital X-rays, 3D impressions, and advanced laser tech for accuracy.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h5>Experienced Specialist Team</h5>
+                                <p>Multiple dental disciplines under one roof, coordinated by experts.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h5>Patient-First Philosophy</h5>
+                                <p>Constant comfort checks throughout every procedure—you are in control.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h5>Transparent Pricing</h5>
+                                <p>Clear treatment plans with itemized costs and no hidden surprise fees.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#book" class="btn btn-primary">Schedule a Free Consultation</a>
+                </div>
+
+                <div class="why-visual reveal">
+                    <div class="giant-emoji">🦷</div>
+                    <div class="glass-badge">
+                        <div style="color: var(--gold); margin-bottom: 8px;">★★★★★</div>
+                        <h4 style="color: white; font-size: 18px;">Top-Rated on Google</h4>
+                        <p style="color: rgba(255,255,255,0.5); font-size: 13px;">4.9/5 — 500+ verified patient reviews from across the metro.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section id="team">
+        <div class="container">
+            <div class="reveal" style="text-align: center;">
+                <div class="tag" style="justify-content: center;">Our Specialists</div>
+                <h2>Meet the Experts Behind Your Smile</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Our team of highly-trained specialists is dedicated to providing pain-free, world-class dental care.</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card reveal">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--ivory-2), var(--mint-light)); border-radius: 50%; margin: 0 auto 24px; display: grid; place-items: center; font-size: 32px;">👨‍⚕️</div>
+                    <h3>Dr. Ivan Mark Escudero</h3>
+                    <span class="specialty-tag">LEAD DENTIST & IMPLANTOLOGIST</span>
+                    <p>UP Manila graduate, US-trained specialist in restorative implants. Founder of Your Dental Business.</p>
+                </div>
+                <div class="team-card reveal">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--ivory-2), var(--mint-light)); border-radius: 50%; margin: 0 auto 24px; display: grid; place-items: center; font-size: 32px;">👩‍⚕️</div>
+                    <h3>Dr. Maria Santos</h3>
+                    <span class="specialty-tag">GENERAL & COSMETIC DENTIST</span>
+                    <p>Expert in full-mouth reconstructions and natural-looking porcelain veneers with 12 years of experience.</p>
+                </div>
+                <div class="team-card reveal">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--ivory-2), var(--mint-light)); border-radius: 50%; margin: 0 auto 24px; display: grid; place-items: center; font-size: 32px;">👩‍⚕️</div>
+                    <h3>Dr. Anna Reyes</h3>
+                    <span class="specialty-tag">GENERAL DENTIST</span>
+                    <p>Specializes in preventive care and aesthetic bondings. Advocate for conservative dentistry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- BOOKING SECTION -->
+    <section id="book" class="booking-section">
+        <div class="container">
+            <div class="booking-grid">
+                <div class="booking-copy reveal">
+                    <div class="tag">Your Next Chapter Starts Here</div>
+                    <h2>Let’s Make Room for a Brighter Smile.</h2>
+                    <p class="booking-intro">Tell us a little about yourself and the care you’re looking for. Our team will follow up to help arrange a visit that works for you.</p>
+                    <div class="booking-perks">
+                        <div class="perk-item"><span>✓</span> Personalised appointment assistance</div>
+                        <div class="perk-item"><span>✓</span> Flexible scheduling, Monday to Saturday</div>
+                        <div class="perk-item"><span>✓</span> Choose your preferred branch and service</div>
+                        <div class="perk-item"><span>✓</span> Friendly support before your first visit</div>
+                    </div>
+                    <div class="booking-phone-card">
+                        <div class="booking-phone-icon">☎</div>
+                        <div><small>Prefer to call us?</small><a href="tel:09626292510">0962 629 2510</a></div>
+                    </div>
+                </div>
+
+                <div class="booking-form-card reveal">
+                    <div class="booking-form-head"><div><h3>Request an Appointment</h3><p>Complete the details below and we’ll be in touch.</p></div><span class="booking-step">01 / Visit</span></div>
+                    <form id="bookingForm" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="e44fd7c5-5ac5-4a79-8327-fbfea3968ef7">
+    <input type="hidden" name="subject" value="New Dental Appointment Booking">
+    <input type="hidden" name="from_name" value="Bright Smile Dental Website">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name <span>*</span></label>
+                                <input type="text" id="fname" name="first_name" autocomplete="given-name" placeholder="Juan" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name <span>*</span></label>
+                                <input type="text" id="lname" name="last_name" autocomplete="family-name" placeholder="Dela Cruz" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address <span>*</span></label>
+                            <input type="email" id="email" name="email" autocomplete="email" placeholder="juan@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile Number (09XXXXXXXXX) <span>*</span></label>
+                            <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="09[0-9]{9}" placeholder="09123456789" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Branch <span>*</span></label>
+                                <select id="branch" name="branch" required>
+                                    <option value="">Select Branch</option>
+                                    <option>Makati Central</option>
+                                    <option>Quezon City North</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Service <span>*</span></label>
+                                <select id="service" name="service" required>
+                                    <option value="">Select Service</option>
+                                    <option>General Checkup</option>
+                                    <option>Cosmetic / Veneers</option>
+                                    <option>Dental Implants</option>
+                                    <option>Orthodontics</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Date <span>*</span></label>
+                            <input type="date" id="date" name="preferred_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Additional Notes</label>
+                            <textarea id="notes" name="additional_notes" rows="3" maxlength="500" placeholder="Tell us about your dental concerns..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-dark" style="width: 100%;" id="submitBtn">Request My Appointment <span aria-hidden="true">→</span></button>
+                        <p class="booking-privacy"><span aria-hidden="true">🔒</span> Your details will be used to respond to your appointment request.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <div class="logo-icon">🦷</div>
+                        <div class="logo-text">YOUR <span>DENTAL</span></div>
+                    </div>
+                    <p>Experience world-class dentistry in the heart of Metro Manila. Your comfort and confidence are our only priorities.</p>
+                    <div class="socials" style="display: flex; gap: 16px;">
+                        <a href="https://www.facebook.com/ivanmark.escudero.75" style="font-size: 20px; color: white;">FB</a>
+                        <a href="https://www.instagram.com/nihexist/" style="font-size: 20px; color: white;">IG</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#locations">Locations</a></li>
+                        <li><a href="#book">Book Appointment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Services</h5>
+                    <ul>
+                        <li><a href="#services">General Dentistry</a></li>
+                        <li><a href="#services">Cosmetic Care</a></li>
+                        <li><a href="#services">Dental Implants</a></li>
+                        <li><a href="#services">Pedodontics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <ul>
+                        <li><a href="tel:09626292510">📞 0962 629 2510</a></li>
+                        <li><a href="mailto:hello@yourdental.ph">✉️ hello@yourdental.ph</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Your Dental Business. All Rights Reserved.</p>
+                <p>Made with ❤️ for Metro Manila smiles</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL & TOAST -->
+    <div class="modal-overlay" id="successModal" onclick="closeModal()">
+        <div style="background: white; padding: 52px; border-radius: var(--radius-lg); max-width: 480px; width: 100%; text-align: center; transform: scale(0.9); transition: 0.3s;" onclick="event.stopPropagation()" class="modal-card">
+            <span style="font-size: 64px; margin-bottom: 24px; display: block;">✅</span>
+            <h3 style="font-size: 32px; margin-bottom: 12px; color: var(--navy);">Appointment Requested!</h3>
+            <p style="margin-bottom: 32px; color: var(--text-muted);">One of our coordinators will call you within 2 hours to confirm your slot.</p>
+            <button class="btn btn-dark" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"><span id="toastIcon">ℹ️</span><span id="toastMsg">Message</span></div>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 30) { nav.classList.add('scrolled'); } 
+            else { nav.classList.remove('scrolled'); }
+        });
+
+        // Mobile Menu toggle
+        function toggleMenu() { document.getElementById('mobileDrawer').classList.toggle('active'); }
+
+        // Booking Form Handling via Web3Forms AJAX (keeps the user on this page)
+        const bookingForm = document.getElementById('bookingForm');
+
+        bookingForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!bookingForm.reportValidity()) return;
+
+            const btn = document.getElementById('submitBtn');
+            const originalText = btn.innerText;
+            btn.innerText = "Sending Appointment...";
+            btn.disabled = true;
+
+            const formData = new FormData(bookingForm);
+            // Web3Forms uses the patient's email as the reply-to address.
+            formData.set('email', bookingForm.querySelector('[name="email"]').value);
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                let result = {};
+                try {
+                    result = await response.json();
+                } catch (_) {
+                    throw new Error('The form service returned an unreadable response.');
+                }
+
+                console.log('Web3Forms response:', result);
+
+                if (response.ok && result.success === true) {
+                    bookingForm.reset();
+                    document.getElementById('successModal').classList.add('active');
+                } else {
+                    showToast(result.message || "Unable to send your request. Please try again or call the clinic.", "error");
+                }
+            } catch (error) {
+                console.error('Web3Forms submission error:', error);
+                showToast("Could not send your request. Please check your connection or call the clinic.", "error");
+            } finally {
+                btn.innerText = originalText;
+                btn.disabled = false;
+            }
+        });
+
+        function closeModal() { document.getElementById('successModal').classList.remove('active'); }
+
+        function showToast(msg, type = "success") {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.className = `toast active ${type === 'error' ? 'error' : ''}`;
+            setTimeout(() => { toast.classList.remove('active'); }, 4000);
+        }
+
+        // Animation Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

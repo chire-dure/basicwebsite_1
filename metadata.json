@@ -1,0 +1,6 @@
+{
+  "name": "Your Dental Business - Clinic & Services",
+  "description": "Metro Manila's smile experts led by Dr. Ivan Mark Escudero. Explore comprehensive dental care with dedicated service pages and connected appointment booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
